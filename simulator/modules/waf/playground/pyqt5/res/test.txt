@@ -1,2 +1,0 @@
-change me to see qrc dependencies!
-

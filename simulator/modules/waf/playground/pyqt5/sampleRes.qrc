@@ -1,5 +1,0 @@
-<!DOCTYPE RCC><RCC version="1.0">
-<qresource>
- <file alias="test.txt">res/test.txt</file>
-</qresource>
-</RCC>
