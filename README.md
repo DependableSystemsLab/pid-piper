@@ -13,7 +13,7 @@ cd pid-piper
 ```
 Build docker image
 ```bash
-docker build -t pid-piper DockerFile/.
+docker build -t pid-piper Dockerfile/.
 ```
 ## Running the Simulator
 We have provided a script to run the simulator with the map view and the console.  
