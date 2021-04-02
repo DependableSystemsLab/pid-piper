@@ -25,13 +25,13 @@ The simulator can also be executed by running the docker image and then followin
 ## Running ArduPilot locally
 To use a local copy of ArduPilot follow these steps:
 * Clone the Project
-* Install the [pre-requisites] (https://github.com/DependableSystemsLab/stealthy-attacks/tree/master/Simulator/ardupilot-attack-version/Tools/environment_install)
+* Install the [pre-requisites](https://github.com/DependableSystemsLab/stealthy-attacks/tree/master/Simulator/ardupilot-attack-version/Tools/environment_install)
 * Run ardupilot locally
 ```bash
 cd simulator/ArduCopter
 ../Tools/autotest/sim_vehicle.py --console --map
 ```
-Follow the steps given [here] (http://ardupilot.org/dev/docs/copter-sitl-mavproxy-tutorial.html) to setup the build environment. 
+Follow the steps given [here](http://ardupilot.org/dev/docs/copter-sitl-mavproxy-tutorial.html) to setup the build environment. 
 
 ## Launch Missions
 To run a mission, use this command:
