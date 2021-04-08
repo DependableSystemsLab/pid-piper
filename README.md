@@ -36,7 +36,7 @@ Follow the steps given [here](http://ardupilot.org/dev/docs/copter-sitl-mavproxy
 ## Launch Missions
 To run a mission, use this command:
 ```bash
-wp load ../Tools/autotest/mission-1.txt
+wp load ../Tools/autotest/mission/mission-1.txt
 mode guided
 arm throttle
 takeoff 10
