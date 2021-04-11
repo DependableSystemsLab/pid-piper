@@ -42,7 +42,7 @@ arm throttle
 takeoff 10
 mode auto
 ```
-The attacks will be launched intermittently during the mission. The effects of the attack and the recovery can be seen by zooming in to the map window. 
+The above script will launch overt attacks intermittently during the mission. The effects of the attack and the recovery can be seen by zooming in to the map window. Videos showing PID-Piper recovery on real RVs are available [here](https://drive.google.com/drive/folders/1GG03mz_0IkC_D91Z9UN3HsluzHrwVNVU). 
 
 ## PID-Piper code and ML models
 The attack detection and recovery code is implemented as a library available at simulator/libraries/PID-Piper. The ML model are available under /models.
