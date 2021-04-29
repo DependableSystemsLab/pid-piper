@@ -27,7 +27,6 @@ float LSTM::getYawAngle(Vector3f acc, Vector3f gyro, Vector3f pos, Vector3f mag,
 }
 
 
-/*
 float LSTM::getRollAngle(Vector3f acc, Vector3f gyro, Vector3f pos, Vector3f mag,
 		float gpsVel, float ahrsRP, float ahrsYaw, float posVarH, float posVarV,
 		float velVarX, float velVarY, int navRoll, int navPitch, float airspeed)
@@ -60,4 +59,3 @@ float LSTM::getYawAngle(Vector3f acc, Vector3f gyro, Vector3f pos, Vector3f mag,
 		const auto yaw = model.predict_single_output({fdeep::tensor(fdeep::tensor_shape(1,18), input)});
 		return yaw;
 }
-*/
