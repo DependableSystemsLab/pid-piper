@@ -1,6 +1,5 @@
 # PID-Piper Recovery Framework
 This repo contains the PID-Piper recovery framework code and dataset used in the PID-Piper DSN'21 paper. 
-- /Dataset contains attack-free and with-attack UAV traces, both for FFC and FBC controller design. 
 - /Simulator contains PID-Piper implementation in ArduPilot SITL. 
 
 We have provided a docker image to build the simulator and run missions to test PID-Piper.  
