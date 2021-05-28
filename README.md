@@ -48,7 +48,7 @@ The above script will launch overt attacks intermittently during the mission. Th
 The attack detection and recovery code is implemented as a library available at simulator/libraries/PID-Piper. The ML model are available under /models.
 
 ## Dataset
-/Dataset folder contains the pruned dataset for FFC and FBC controller designs. Please contain pdash@ece.ubc.ca if you need the raw .tlog files. 
+Please contain pdash@ece.ubc.ca if you need the raw .tlog files. 
 
 ## Paper
 If you find the repo useful, please cite the following paper: 
