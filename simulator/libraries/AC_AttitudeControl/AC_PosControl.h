@@ -12,8 +12,6 @@
 #include <AP_Motors/AP_Motors.h>          // motors library
 #include <AP_Vehicle/AP_Vehicle.h>         // common vehicle parameters
 
-#include <PID_Piper/PID_Piper.h>
-
 // position controller default definitions
 #define POSCONTROL_ACCELERATION_MIN             50.0f   // minimum horizontal acceleration in cm/s/s - used for sanity checking acceleration in leash length calculation
 #define POSCONTROL_ACCEL_XY                     100.0f  // default horizontal acceleration in cm/s/s.  This is overwritten by waypoint and loiter controllers
@@ -438,6 +436,12 @@ protected:
 	 */
 
 	PID_Piper _piper;
-
+	void write_to_piper(float accel_target_x, float accel_target_y,
+			float ahrs_gyro_x, float ahrs_gyro_y, float ahrs_gyro_z,
+			float curr_pos_x, float curr_pos_y, float curr_pos_z,
+			float vehicle_horiz_vel_x, float ahrs_error, float ahrs_error_yaw,
+			float pos_error_x, float pos_error_y,
+			float vel_error_x, float vel_error_y,
+			float roll_sensor, float pitch_sensor);
 
 };

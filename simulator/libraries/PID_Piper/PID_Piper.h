@@ -1,10 +1,7 @@
 #ifndef PID_PIPER_H
 #define PID_PIPER_H
 
-#include<iostream>
-#include<fstream>
-using namespace std;
-#include<stdio.h>
+#include <AP_Math/AP_Math.h>
 #include "LSTM.h"
 
 class PID_Piper
@@ -43,7 +40,7 @@ class PID_Piper
 		double residual[3];
 		bool recoveryMode = false;
 
-		void getPosControlXY(float _accX, float _accY,
+		void getPosControlXY(float _accX, float _accY, float _accZ,
 									float _gyroX, float _gyroY, float _gyroZ,
 									float _posX, float _posY, float _posZ,
 									float _velX, float _ahrsRP, float _ahrsYaw,
@@ -55,12 +52,14 @@ class PID_Piper
 
 		void getAirSpeed(float _airspeed);
 
-		void getEulerAngle();
+		Vector3f getEulerAngle();
 		void cusum(double error[3]);
 		bool checkSwitchControl();
 
 		Vector3f recoveryMonitor();
 
 		LSTM _lstm;
+
+		void write_to_file(Vector3f, Vector3f, Vector3f, Vector3f, float, float, float, float, float, float, float, int, int, float);
 };
 #endif

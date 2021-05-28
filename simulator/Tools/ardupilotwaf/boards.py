@@ -138,11 +138,11 @@ class Board:
             env.CXXFLAGS += ['-DMATH_CHECK_INDEXES']
 
         env.CXXFLAGS += [
-            '-std=gnu++11',
+            '-std=gnu++14',
 
             '-fdata-sections',
             '-ffunction-sections',
-            '-fno-exceptions',
+            '-fexceptions',
             '-fsigned-char',
 
             '-Wall',

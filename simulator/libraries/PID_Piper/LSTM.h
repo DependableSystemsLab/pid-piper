@@ -1,3 +1,7 @@
+/*
+ * This library uses frugally-deep header only library written by Tobias Hermann
+ * https://github.com/Dobiasd/frugally-deep
+ */
 #ifndef LSTM_H
 #define LSTM_H
 

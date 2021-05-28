@@ -12,7 +12,8 @@
 #include <AC_PID/AC_PID.h>
 #include <AC_PID/AC_P.h>
 
-#include <PID_Piper/PID_Piper.h>
+//#include <PID_Piper/PID_Piper.h>
+
 
 #define AC_ATTITUDE_CONTROL_ANGLE_P                     4.5f             // default angle P gain for roll, pitch and yaw
 
@@ -486,6 +487,15 @@ public:
      * PID-Piper
      */
     PID_Piper _piper;
+    Vector3f piper_angles;
+    void write_to_piper(Vector3f piper, Vector3f pid);
+
+    float accX, accY, accZ, posX, posY, posZ, velX, errorX, errorY, velErrorX, velErrorY;
+    void setControlXY(float _accX, float _accY,
+    		float _posX, float _posY, float _posZ,
+    		float _velX, float _errorX, float _errorY, float _velErrorX, float _velErrorY);
+	void setControlZ(float _accZ);
+
 
 };
 

@@ -4,7 +4,7 @@
 #include <time.h>
 #include <unistd.h>
 
-//#include "../../ArduCopter/MyPIDio.h"
+#include "../../ArduCopter/O_PID_Piper.h"
 
 
 #if APM_BUILD_TYPE(APM_BUILD_ArduPlane)
@@ -267,14 +267,33 @@ void AC_AttitudeControl::input_quaternion(Quaternion attitude_desired_quat)
 void AC_AttitudeControl::input_euler_angle_roll_pitch_euler_rate_yaw(float euler_roll_angle_cd, float euler_pitch_angle_cd, float euler_yaw_rate_cds)
 {
     /*
-     * Pritam Dash
+     * PID-Piper
      */
-    //startTimer();
+
+	_piper.getPosControlXY(AC_AttitudeControl::accX, AC_AttitudeControl::accY, AC_AttitudeControl::accZ,
+			_ahrs.get_gyro_latest().x, _ahrs.get_gyro_latest().y, _ahrs.get_gyro_latest().z,
+			AC_AttitudeControl::posX, AC_AttitudeControl::posY, AC_AttitudeControl::posZ,
+			AC_AttitudeControl::velX, _ahrs.get_error_rp(), _ahrs.get_error_yaw(),
+			AC_AttitudeControl::posX, AC_AttitudeControl::posY,
+			AC_AttitudeControl::velErrorX, AC_AttitudeControl::velErrorY,
+			_ahrs.roll_sensor, _ahrs.pitch_sensor);
+
+	_piper.y_PID.x = euler_roll_angle_cd;
+	_piper.y_PID.y = euler_pitch_angle_cd;
+	_piper.y_PID.z = euler_yaw_rate_cds;
+
+	piper_angles = _piper.recoveryMonitor();
 
     // Convert from centidegrees on public interface to radians
     float euler_roll_angle = radians(euler_roll_angle_cd*0.01f);
     float euler_pitch_angle = radians(euler_pitch_angle_cd*0.01f);
     float euler_yaw_rate = radians(euler_yaw_rate_cds*0.01f);
+	/*
+	// PID-Piper
+	float euler_roll_angle = radians(piper_angles.x*0.01f);
+	float euler_pitch_angle = radians(piper_angles.y*0.01f);
+	float euler_yaw_rate = radians(piper_angles.z*0.01f);
+	*/
 
     // calculate the attitude target euler angles
     _attitude_target_quat.to_euler(_attitude_target_euler_angle.x, _attitude_target_euler_angle.y, _attitude_target_euler_angle.z);
@@ -350,10 +369,37 @@ void AC_AttitudeControl::input_euler_angle_roll_pitch_euler_rate_yaw(float euler
 // Command an euler roll, pitch and yaw angle with angular velocity feedforward and smoothing
 void AC_AttitudeControl::input_euler_angle_roll_pitch_yaw(float euler_roll_angle_cd, float euler_pitch_angle_cd, float euler_yaw_angle_cd, bool slew_yaw)
 {
+	/*
+	 * PID-Piper
+	 */
+	/*
+	_piper.getPosControlXY(AC_AttitudeControl::accX, AC_AttitudeControl::accY, AC_AttitudeControl::accZ,
+			_ahrs.get_gyro_latest().x, _ahrs.get_gyro_latest().y, _ahrs.get_gyro_latest().z,
+			AC_AttitudeControl::posX, AC_AttitudeControl::posY, AC_AttitudeControl::posZ,
+			AC_AttitudeControl::velX, _ahrs.get_error_rp(), _ahrs.get_error_yaw(),
+			AC_AttitudeControl::posX, AC_AttitudeControl::posY,
+			AC_AttitudeControl::velErrorX, AC_AttitudeControl::velErrorY,
+			_ahrs.roll_sensor, _ahrs.pitch_sensor);
+
+	_piper.y_PID.x = euler_roll_angle_cd;
+	_piper.y_PID.y = euler_pitch_angle_cd;
+	_piper.y_PID.z = euler_yaw_angle_cd;
+
+	piper_angles = _piper.recoveryMonitor();
+
+	write_to_piper(piper_angles, _piper.y_PID);
+	*/
     // Convert from centidegrees on public interface to radians
     float euler_roll_angle = radians(euler_roll_angle_cd*0.01f);
     float euler_pitch_angle = radians(euler_pitch_angle_cd*0.01f);
     float euler_yaw_angle = radians(euler_yaw_angle_cd*0.01f);
+
+    /*
+	// PID-Piper
+	float euler_roll_angle = radians(piper_angles.x*0.01f);
+	float euler_pitch_angle = radians(piper_angles.y*0.01f);
+	float euler_yaw_angle = radians(piper_angles.z*0.01f);
+	*/
 
     // calculate the attitude target euler angles
     _attitude_target_quat.to_euler(_attitude_target_euler_angle.x, _attitude_target_euler_angle.y, _attitude_target_euler_angle.z);
@@ -438,11 +484,27 @@ void AC_AttitudeControl::input_euler_angle_roll_pitch_yaw(float euler_roll_angle
 // Command an euler roll, pitch, and yaw rate with angular velocity feedforward and smoothing
 void AC_AttitudeControl::input_euler_rate_roll_pitch_yaw(float euler_roll_rate_cds, float euler_pitch_rate_cds, float euler_yaw_rate_cds)
 {
+	/*
+	 * PID-Piper
+	 */
+	/*
+	_piper.y_PID.x = euler_roll_rate_cds;
+	_piper.y_PID.y = euler_pitch_rate_cds;
+	_piper.y_PID.z = euler_yaw_rate_cds;
+
+	piper_angles = _piper.recoveryMonitor();
+	*/
+
     // Convert from centidegrees on public interface to radians
     float euler_roll_rate = radians(euler_roll_rate_cds*0.01f);
     float euler_pitch_rate = radians(euler_pitch_rate_cds*0.01f);
     float euler_yaw_rate = radians(euler_yaw_rate_cds*0.01f);
-
+	/*
+    // PID-Piper
+    float euler_roll_rate = radians(piper_angles.x*0.01f);
+    float euler_pitch_rate = radians(piper_angles.y*0.01f);
+    float euler_yaw_rate = radians(piper_angles.z*0.01f);
+	*/
     // calculate the attitude target euler angles
     _attitude_target_quat.to_euler(_attitude_target_euler_angle.x, _attitude_target_euler_angle.y, _attitude_target_euler_angle.z);
 
@@ -1242,6 +1304,27 @@ void AC_AttitudeControl::Write_IO_Pitch_Rate()
 }
 */
 
+void AC_AttitudeControl::setControlXY(float _accX, float _accY,
+		float _posX, float _posY, float _posZ,
+		float _velX, float _errorX, float _errorY, float _velErrorX, float _velErrorY)
+{
+	AC_AttitudeControl::accX = _accX;
+	AC_AttitudeControl::accY = _accY;
+	AC_AttitudeControl::posX = _posX;
+	AC_AttitudeControl::posY = _posY;
+	AC_AttitudeControl::posZ = _posZ;
+	AC_AttitudeControl::velX = _velX;
+	AC_AttitudeControl::errorX = _errorX;
+	AC_AttitudeControl::errorY = _errorY;
+	AC_AttitudeControl::velErrorX = _velErrorX;
+	AC_AttitudeControl::velErrorY = _velErrorY;
+}
+
+void AC_AttitudeControl::setControlZ(float _accZ)
+{
+	AC_AttitudeControl::accZ = _accZ;
+}
+
 void AC_AttitudeControl::startTimer()
 {
     AC_AttitudeControl::tStart = clock();
@@ -1292,3 +1375,9 @@ int AC_AttitudeControl::checkTimePID_IO()
     }
     return 0;
 }
+/*
+void AC_AttitudeControl::write_to_piper(Vector3f piper, Vector3f pid)
+{
+	O_PID_Piper::write_to_file_piper(piper, pid);
+}
+*/

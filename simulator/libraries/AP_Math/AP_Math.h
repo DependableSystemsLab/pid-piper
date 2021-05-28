@@ -19,6 +19,13 @@
 #include "vector3.h"
 #include "spline5.h"
 
+/*
+ * PID-Piper
+ */
+//#include "PID_Piper/PID_Piper.h"
+
+//PID_Piper _piper;
+
 // define AP_Param types AP_Vector3f and Ap_Matrix3f
 AP_PARAMDEFV(Vector3f, Vector3f, AP_PARAM_VECTOR3F);
 

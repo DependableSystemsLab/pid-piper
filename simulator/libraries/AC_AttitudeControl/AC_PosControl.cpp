@@ -2,9 +2,10 @@
 #include "AC_PosControl.h"
 #include <AP_Math/AP_Math.h>
 #include <AP_Logger/AP_Logger.h>
-//#include "../../ArduCopter/MyPIDio.h"
 #include<time.h>
 #include<unistd.h>
+
+//#include "../../ArduCopter/O_PID_Piper.h"
 
 extern const AP_HAL::HAL& hal;
 
@@ -631,7 +632,7 @@ void AC_PosControl::run_z_controller()
     /*
 	 * PID-Piper
 	 */
-	//_piper.getPosControlZ(_accel_target.z);
+	_attitude_control.setControlZ(_accel_target.z);
 
     float thr_out = (p+i+d)*0.001f +_motors.get_throttle_hover();
 
@@ -1011,7 +1012,7 @@ void AC_PosControl::run_xy_controller(float dt)
     float kP = ekfNavVelGainScaler * _p_pos_xy.kP(); // scale gains to compensate for noisy optical flow measurement in the EKF
 
     /*
-     * Pritam Dash
+     * False Data Injection
      */
 
     startFlightTimer();
@@ -1116,16 +1117,19 @@ void AC_PosControl::run_xy_controller(float dt)
     /*
 	 * PID-Piper
 	 */
-	_piper.getPosControlXY(_accel_target.x, _accel_target.y,
-							_ahrs.get_gyro_latest().x, _ahrs.get_gyro_latest().y, _ahrs.get_gyro_latest().z,
+	_attitude_control.setControlXY(_accel_target.x, _accel_target.y,
 							curr_pos.x, curr_pos.y, curr_pos.z,
-							_vehicle_horiz_vel.x, _ahrs.get_error_rp(), _ahrs.get_error_yaw(),
-							_pos_error.x, _pos_error.y,
-							_vel_error.x, _vel_error.y,
-							_ahrs.roll_sensor, _ahrs.pitch_sensor);
-
-
-
+							_vehicle_horiz_vel.x, _pos_error.x, _pos_error.y,
+							_vel_error.x, _vel_error.y);
+	/*
+	write_to_piper(_accel_target.x, _accel_target.y,
+			_ahrs.get_gyro_latest().x, _ahrs.get_gyro_latest().y, _ahrs.get_gyro_latest().z,
+			curr_pos.x, curr_pos.y, curr_pos.z,
+			_vehicle_horiz_vel.x, _ahrs.get_error_rp(), _ahrs.get_error_yaw(),
+			_pos_error.x, _pos_error.y,
+			_vel_error.x, _vel_error.y,
+			_ahrs.roll_sensor, _ahrs.pitch_sensor);
+	*/
     // the following section converts desired accelerations provided in lat/lon frame to roll/pitch angles
 
     // limit acceleration using maximum lean angles
@@ -1135,23 +1139,6 @@ void AC_PosControl::run_xy_controller(float dt)
 
     // update angle targets that will be passed to stabilize controller
     accel_to_lean_angles(_accel_target.x, _accel_target.y, _roll_target, _pitch_target);
-
-    /*
-     * Pritam Dash
-     * Injecting false data
-     */
-    /*startFlightTimer();
-
-    int checkTime = checkTimer();
-    if(checkTime == 1)
-    {
-        int checkAttackTime = checkAttackTimer();
-        if(checkAttackTime == 1)
-        {
-            _roll_target = falseData;
-        }
-        flag = checkAttackTime;
-    }*/
 
     /*
      * Pritam Dash
@@ -1374,7 +1361,7 @@ int AC_PosControl::checkTimer()
 
 void AC_PosControl::initAttackTimer()
 {
-    tAttack = clock() + (2 * CLOCKS_PER_SEC);
+    tAttack = clock() + (5 * CLOCKS_PER_SEC);
 }
 
 int AC_PosControl::checkAttackTimer()
@@ -1400,7 +1387,7 @@ int AC_PosControl::checkAttackTimer()
 
 void AC_PosControl::initNoAttackTimer()
 {
-    tNoAttack = clock() + (5 * CLOCKS_PER_SEC);
+    tNoAttack = clock() + (3 * CLOCKS_PER_SEC);
 }
 
 int AC_PosControl::checkNoAttackTimer()
@@ -1416,5 +1403,22 @@ int AC_PosControl::checkNoAttackTimer()
     return fdiAttackReturn2;
 }
 
+/*
+void AC_PosControl::write_to_piper( float accel_target_x, float accel_target_y,
+		float ahrs_gyro_x, float ahrs_gyro_y, float ahrs_gyro_z,
+		float curr_pos_x, float curr_pos_y, float curr_pos_z,
+		float vehicle_horiz_vel_x, float ahrs_error, float ahrs_error_yaw,
+		float pos_error_x, float pos_error_y,
+		float vel_error_x, float vel_error_y,
+		float roll_sensor, float pitch_sensor)
+{
+	O_PID_Piper::write_to_file_sensor(accel_target_x, accel_target_y,
+			ahrs_gyro_x, ahrs_gyro_y, ahrs_gyro_z,
+			curr_pos_x, curr_pos_y, curr_pos_z,
+			vehicle_horiz_vel_x, ahrs_error, ahrs_error_yaw,
+			pos_error_x, pos_error_y,
+			vel_error_x, vel_error_y,
+			roll_sensor, pitch_sensor);
+}
 
-
+*/
