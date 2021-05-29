@@ -15,6 +15,10 @@ Build docker image
 ```bash
 docker build -t pid-piper Dockerfile/.
 ```
+Install setup files
+```bash
+./setup.sh
+```
 ## Running the Simulator
 We have provided a script to run the simulator with the map view and the console.  
 ```bash
@@ -26,6 +30,7 @@ The simulator can also be executed by running the docker image and then followin
 To use a local copy of ArduPilot follow these steps:
 * Clone the Project
 * Install the [pre-requisites](https://github.com/DependableSystemsLab/stealthy-attacks/tree/master/Simulator/ardupilot-attack-version/Tools/environment_install)
+* Install setup files
 * Run ardupilot locally
 ```bash
 cd simulator/ArduCopter
