@@ -14,15 +14,14 @@ Build docker image
 ```bash
 docker build -t pid-piper Dockerfile/.
 ```
-Install setup files
-```bash
-./setup.sh
-```
 ## Running the Simulator
+Change the file locations in ```libraries/PID_Piper/LSTM.cpp``` as per your location environment.
+
 We have provided a script to run the simulator with the map view and the console.  
 ```bash
 ./startSimulator.sh copter --console --map
 ```
+
 The simulator can also be executed by running the docker image and then following the steps given here http://ardupilot.org/dev/docs/setting-up-sitl-on-linux.html 
 
 ## Running ArduPilot locally
@@ -30,7 +29,10 @@ To use a local copy of ArduPilot follow these steps:
 * Clone the Project
 * Install the [pre-requisites](https://github.com/DependableSystemsLab/stealthy-attacks/tree/master/Simulator/ardupilot-attack-version/Tools/environment_install)
 * Install setup files
-* Run ardupilot locally
+```bash
+./setup.sh
+```
+* Run ardupilot 
 ```bash
 cd simulator/ArduCopter
 ../Tools/autotest/sim_vehicle.py --console --map
