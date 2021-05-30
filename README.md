@@ -17,7 +17,7 @@ docker build -t pid-piper Dockerfile/.
 Run container and install setup files
 ```bash
 docker container run -it pid-piper
-cd pid -piper
+cd pid-piper
 ./setup.sh
 ```
 Run the simulator from within the container. Or exit the container follow the step below. 
