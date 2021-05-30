@@ -14,10 +14,16 @@ Build docker image
 ```bash
 docker build -t pid-piper Dockerfile/.
 ```
-## Running the Simulator
-Change the file locations in ```libraries/PID_Piper/LSTM.cpp``` as per your location environment.
+Run container and install setup files
+```bash
+docker container run -it pid-piper
+cd pid -piper
+./setup.sh
+```
+Run the simulator from within the container. Or exit the container follow the step below. 
 
-We have provided a script to run the simulator with the map view and the console.  
+## Running the Simulator
+Run the simulator with the map view and the console. 
 ```bash
 ./startSimulator.sh copter --console --map
 ```
@@ -51,7 +57,7 @@ mode auto
 The above script will launch overt attacks intermittently during the mission. The effects of the attack and the recovery can be seen by zooming in to the map window. Videos showing PID-Piper recovery on real RVs are available [here](https://drive.google.com/drive/folders/1GG03mz_0IkC_D91Z9UN3HsluzHrwVNVU). 
 
 ## PID-Piper code and ML models
-The attack detection and recovery code is implemented as a library available at simulator/libraries/PID-Piper. The ML model are available under /models.
+The attack detection and recovery code is implemented as a library available at ```/simulator/libraries/PID-Piper```. The ML model are available under ```/libraries/PID_Piper/models```.
 
 ## Dataset
 Please contain pdash@ece.ubc.ca if you need the raw .tlog files. 
