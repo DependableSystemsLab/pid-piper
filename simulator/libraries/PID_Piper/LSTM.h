@@ -6,11 +6,27 @@
 #define LSTM_H
 
 #include <AP_Math/AP_Math.h>
+#include <fdeep/fdeep.hpp>
 
 class LSTM
 {
-	public:
+	private:
 		Vector3f targetAngle;
+
+		fdeep::model loadRollModel() {
+			return fdeep::load_model("/pid-piper/simulator/libraries/PID_Piper/models/roll-nn.json");
+		}
+		fdeep::model loadPitchModel() {
+			return fdeep::load_model("/pid-piper/simulator/libraries/PID_Piper/models/pitch-nn.json");
+		}
+		fdeep::model loadYawModel() {
+			return fdeep::load_model("/pid-piper/simulator/libraries/PID_Piper/models/yaw-nn.json");
+		}
+
+	public:
+		const fdeep::model rollModel = loadRollModel();
+		const fdeep::model pitchModel = loadPitchModel();
+		const fdeep::model yawModel = loadYawModel();
 
 		float getRollAngle(Vector3f acc, Vector3f gyro, Vector3f pos, Vector3f mag,
 				float gpsVel, float ahrsRP, float ahrsYaw, float posVarH, float posVarV,
@@ -25,3 +41,4 @@ class LSTM
 				float velVarX, float velVarY, int navRoll, int navPitch, float airspeed);
 };
 #endif
+

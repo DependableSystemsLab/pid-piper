@@ -1394,11 +1394,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus_Maxell.cpp", 
+      "../../libraries/AP_Math/matrix3.cpp", 
       "-c", 
-      "-olibraries/AP_BattMonitor/AP_BattMonitor_SMBus_Maxell.cpp.0.o"
+      "-olibraries/AP_Math/matrix3.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus_Maxell.cpp"
+    "file": "../../libraries/AP_Math/matrix3.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -1449,11 +1449,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_HAL_SITL/RCInput.cpp", 
+      "../../libraries/AP_RangeFinder/AP_RangeFinder_MAVLink.cpp", 
       "-c", 
-      "-olibraries/AP_HAL_SITL/RCInput.cpp.0.o"
+      "-olibraries/AP_RangeFinder/AP_RangeFinder_MAVLink.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_HAL_SITL/RCInput.cpp"
+    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_MAVLink.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -1957,6 +1957,61 @@
       "-oArduCopter/mode_brake.cpp.27.o"
     ], 
     "file": "../../ArduCopter/mode_brake.cpp"
+  }, 
+  {
+    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
+    "arguments": [
+      "/usr/lib/ccache/g++", 
+      "-std=gnu++14", 
+      "-fdata-sections", 
+      "-ffunction-sections", 
+      "-fexceptions", 
+      "-fsigned-char", 
+      "-Wall", 
+      "-Wextra", 
+      "-Wformat", 
+      "-Wshadow", 
+      "-Wpointer-arith", 
+      "-Wcast-align", 
+      "-Wundef", 
+      "-Wno-unused-parameter", 
+      "-Wno-missing-field-initializers", 
+      "-Wno-reorder", 
+      "-Wno-redundant-decls", 
+      "-Wno-unknown-pragmas", 
+      "-Werror=format-security", 
+      "-Werror=enum-compare", 
+      "-Werror=array-bounds", 
+      "-Werror=uninitialized", 
+      "-Werror=init-self", 
+      "-Werror=narrowing", 
+      "-Werror=return-type", 
+      "-Werror=switch", 
+      "-Werror=sign-compare", 
+      "-Werror=unused-result", 
+      "-Werror=return-type", 
+      "-Wfatal-errors", 
+      "-Wno-trigraphs", 
+      "-Werror=unused-but-set-variable", 
+      "-Werror=float-equal", 
+      "-O3", 
+      "-MMD", 
+      "-include", 
+      "ap_config.h", 
+      "-Ilibraries", 
+      "-Ilibraries/GCS_MAVLink", 
+      "-I.", 
+      "-I../../libraries", 
+      "-I../../libraries/AP_Common/missing", 
+      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
+      "-DAP_SCRIPTING_CHECKS=1", 
+      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
+      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
+      "../../libraries/AP_Airspeed/AP_Airspeed_Health.cpp", 
+      "-c", 
+      "-olibraries/AP_Airspeed/AP_Airspeed_Health.cpp.0.o"
+    ], 
+    "file": "../../libraries/AP_Airspeed/AP_Airspeed_Health.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -2785,15 +2840,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
-      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
-      "-DSKETCH=\"ArduCopter\"", 
-      "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../ArduCopter/precision_landing.cpp", 
+      "../../libraries/AP_Common/c++.cpp", 
       "-c", 
-      "-oArduCopter/precision_landing.cpp.27.o"
+      "-olibraries/AP_Common/c++.cpp.0.o"
     ], 
-    "file": "../../ArduCopter/precision_landing.cpp"
+    "file": "../../libraries/AP_Common/c++.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -4853,15 +4904,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
-      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
-      "-DSKETCH=\"ArduCopter\"", 
-      "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../ArduCopter/navigation.cpp", 
+      "../../libraries/GCS_MAVLink/GCS_Fence.cpp", 
       "-c", 
-      "-oArduCopter/navigation.cpp.27.o"
+      "-olibraries/GCS_MAVLink/GCS_Fence.cpp.0.o"
     ], 
-    "file": "../../ArduCopter/navigation.cpp"
+    "file": "../../libraries/GCS_MAVLink/GCS_Fence.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -5303,15 +5350,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
-      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
-      "-DSKETCH=\"ArduCopter\"", 
-      "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../ArduCopter/ArduCopter.cpp", 
+      "../../libraries/AP_Proximity/AP_Proximity_RangeFinder.cpp", 
       "-c", 
-      "-oArduCopter/ArduCopter.cpp.27.o"
+      "-olibraries/AP_Proximity/AP_Proximity_RangeFinder.cpp.0.o"
     ], 
-    "file": "../../ArduCopter/ArduCopter.cpp"
+    "file": "../../libraries/AP_Proximity/AP_Proximity_RangeFinder.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -5641,11 +5684,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/SITL/SIM_Tracker.cpp", 
+      "../../libraries/AP_Notify/DiscreteRGBLed.cpp", 
       "-c", 
-      "-olibraries/SITL/SIM_Tracker.cpp.0.o"
+      "-olibraries/AP_Notify/DiscreteRGBLed.cpp.0.o"
     ], 
-    "file": "../../libraries/SITL/SIM_Tracker.cpp"
+    "file": "../../libraries/AP_Notify/DiscreteRGBLed.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -5971,15 +6014,14 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
       "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
       "-DSKETCH=\"ArduCopter\"", 
       "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../ArduCopter/AP_State.cpp", 
+      "../../libraries/AP_Avoidance/AP_Avoidance.cpp", 
       "-c", 
-      "-oArduCopter/AP_State.cpp.27.o"
+      "-olibraries/AP_Avoidance/AP_Avoidance.cpp.4.o"
     ], 
-    "file": "../../ArduCopter/AP_State.cpp"
+    "file": "../../libraries/AP_Avoidance/AP_Avoidance.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -6312,11 +6354,15 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_RPM/RPM_SITL.cpp", 
+      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
+      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
+      "-DSKETCH=\"ArduCopter\"", 
+      "-DSKETCHNAME=\"ArduCopter\"", 
+      "../../ArduCopter/baro_ground_effect.cpp", 
       "-c", 
-      "-olibraries/AP_RPM/RPM_SITL.cpp.0.o"
+      "-oArduCopter/baro_ground_effect.cpp.27.o"
     ], 
-    "file": "../../libraries/AP_RPM/RPM_SITL.cpp"
+    "file": "../../ArduCopter/baro_ground_effect.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -6367,11 +6413,15 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_HAL/utility/RingBuffer.cpp", 
+      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
+      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
+      "-DSKETCH=\"ArduCopter\"", 
+      "-DSKETCHNAME=\"ArduCopter\"", 
+      "../../ArduCopter/mode.cpp", 
       "-c", 
-      "-olibraries/AP_HAL/utility/RingBuffer.cpp.0.o"
+      "-oArduCopter/mode.cpp.27.o"
     ], 
-    "file": "../../libraries/AP_HAL/utility/RingBuffer.cpp"
+    "file": "../../ArduCopter/mode.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -6422,11 +6472,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Motors/AP_MotorsTri.cpp", 
+      "../../libraries/AP_Camera/AP_Camera.cpp", 
       "-c", 
-      "-olibraries/AP_Motors/AP_MotorsTri.cpp.0.o"
+      "-olibraries/AP_Camera/AP_Camera.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_Motors/AP_MotorsTri.cpp"
+    "file": "../../libraries/AP_Camera/AP_Camera.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -8090,73 +8140,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
-      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
-      "-DSKETCH=\"ArduCopter\"", 
-      "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../ArduCopter/baro_ground_effect.cpp", 
+      "../../libraries/AP_RPM/RPM_SITL.cpp", 
       "-c", 
-      "-oArduCopter/baro_ground_effect.cpp.27.o"
+      "-olibraries/AP_RPM/RPM_SITL.cpp.0.o"
     ], 
-    "file": "../../ArduCopter/baro_ground_effect.cpp"
-  }, 
-  {
-    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
-    "arguments": [
-      "/usr/lib/ccache/g++", 
-      "-std=gnu++14", 
-      "-fdata-sections", 
-      "-ffunction-sections", 
-      "-fexceptions", 
-      "-fsigned-char", 
-      "-Wall", 
-      "-Wextra", 
-      "-Wformat", 
-      "-Wshadow", 
-      "-Wpointer-arith", 
-      "-Wcast-align", 
-      "-Wundef", 
-      "-Wno-unused-parameter", 
-      "-Wno-missing-field-initializers", 
-      "-Wno-reorder", 
-      "-Wno-redundant-decls", 
-      "-Wno-unknown-pragmas", 
-      "-Werror=format-security", 
-      "-Werror=enum-compare", 
-      "-Werror=array-bounds", 
-      "-Werror=uninitialized", 
-      "-Werror=init-self", 
-      "-Werror=narrowing", 
-      "-Werror=return-type", 
-      "-Werror=switch", 
-      "-Werror=sign-compare", 
-      "-Werror=unused-result", 
-      "-Werror=return-type", 
-      "-Wfatal-errors", 
-      "-Wno-trigraphs", 
-      "-Werror=unused-but-set-variable", 
-      "-Werror=float-equal", 
-      "-O3", 
-      "-MMD", 
-      "-include", 
-      "ap_config.h", 
-      "-Ilibraries", 
-      "-Ilibraries/GCS_MAVLink", 
-      "-I.", 
-      "-I../../libraries", 
-      "-I../../libraries/AP_Common/missing", 
-      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
-      "-DAP_SCRIPTING_CHECKS=1", 
-      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
-      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
-      "-DSKETCH=\"ArduCopter\"", 
-      "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../libraries/AP_BLHeli/AP_BLHeli.cpp", 
-      "-c", 
-      "-olibraries/AP_BLHeli/AP_BLHeli.cpp.4.o"
-    ], 
-    "file": "../../libraries/AP_BLHeli/AP_BLHeli.cpp"
+    "file": "../../libraries/AP_RPM/RPM_SITL.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -8658,15 +8646,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
-      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
-      "-DSKETCH=\"ArduCopter\"", 
-      "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../ArduCopter/mode.cpp", 
+      "../../libraries/AP_HAL/utility/RingBuffer.cpp", 
       "-c", 
-      "-oArduCopter/mode.cpp.27.o"
+      "-olibraries/AP_HAL/utility/RingBuffer.cpp.0.o"
     ], 
-    "file": "../../ArduCopter/mode.cpp"
+    "file": "../../libraries/AP_HAL/utility/RingBuffer.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -8942,120 +8926,6 @@
       "-olibraries/AP_HAL_SITL/sitl_gps.cpp.0.o"
     ], 
     "file": "../../libraries/AP_HAL_SITL/sitl_gps.cpp"
-  }, 
-  {
-    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
-    "arguments": [
-      "/usr/lib/ccache/g++", 
-      "-std=gnu++14", 
-      "-fdata-sections", 
-      "-ffunction-sections", 
-      "-fexceptions", 
-      "-fsigned-char", 
-      "-Wall", 
-      "-Wextra", 
-      "-Wformat", 
-      "-Wshadow", 
-      "-Wpointer-arith", 
-      "-Wcast-align", 
-      "-Wundef", 
-      "-Wno-unused-parameter", 
-      "-Wno-missing-field-initializers", 
-      "-Wno-reorder", 
-      "-Wno-redundant-decls", 
-      "-Wno-unknown-pragmas", 
-      "-Werror=format-security", 
-      "-Werror=enum-compare", 
-      "-Werror=array-bounds", 
-      "-Werror=uninitialized", 
-      "-Werror=init-self", 
-      "-Werror=narrowing", 
-      "-Werror=return-type", 
-      "-Werror=switch", 
-      "-Werror=sign-compare", 
-      "-Werror=unused-result", 
-      "-Werror=return-type", 
-      "-Wfatal-errors", 
-      "-Wno-trigraphs", 
-      "-Werror=unused-but-set-variable", 
-      "-Werror=float-equal", 
-      "-O3", 
-      "-MMD", 
-      "-include", 
-      "ap_config.h", 
-      "-Ilibraries", 
-      "-Ilibraries/GCS_MAVLink", 
-      "-I.", 
-      "-I../../libraries", 
-      "-I../../libraries/AP_Common/missing", 
-      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
-      "-DAP_SCRIPTING_CHECKS=1", 
-      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
-      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_InertialSensor/AP_InertialSensor_Invensense.cpp", 
-      "-c", 
-      "-olibraries/AP_InertialSensor/AP_InertialSensor_Invensense.cpp.0.o"
-    ], 
-    "file": "../../libraries/AP_InertialSensor/AP_InertialSensor_Invensense.cpp"
-  }, 
-  {
-    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
-    "arguments": [
-      "/usr/lib/ccache/g++", 
-      "-std=gnu++14", 
-      "-fdata-sections", 
-      "-ffunction-sections", 
-      "-fexceptions", 
-      "-fsigned-char", 
-      "-Wall", 
-      "-Wextra", 
-      "-Wformat", 
-      "-Wshadow", 
-      "-Wpointer-arith", 
-      "-Wcast-align", 
-      "-Wundef", 
-      "-Wno-unused-parameter", 
-      "-Wno-missing-field-initializers", 
-      "-Wno-reorder", 
-      "-Wno-redundant-decls", 
-      "-Wno-unknown-pragmas", 
-      "-Werror=format-security", 
-      "-Werror=enum-compare", 
-      "-Werror=array-bounds", 
-      "-Werror=uninitialized", 
-      "-Werror=init-self", 
-      "-Werror=narrowing", 
-      "-Werror=return-type", 
-      "-Werror=switch", 
-      "-Werror=sign-compare", 
-      "-Werror=unused-result", 
-      "-Werror=return-type", 
-      "-Wfatal-errors", 
-      "-Wno-trigraphs", 
-      "-Werror=unused-but-set-variable", 
-      "-Werror=float-equal", 
-      "-O3", 
-      "-MMD", 
-      "-include", 
-      "ap_config.h", 
-      "-Ilibraries", 
-      "-Ilibraries/GCS_MAVLink", 
-      "-I.", 
-      "-I../../libraries", 
-      "-I../../libraries/AP_Common/missing", 
-      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
-      "-DAP_SCRIPTING_CHECKS=1", 
-      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
-      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
-      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
-      "-DSKETCH=\"ArduCopter\"", 
-      "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../ArduCopter/mode_guided.cpp", 
-      "-c", 
-      "-oArduCopter/mode_guided.cpp.27.o"
-    ], 
-    "file": "../../ArduCopter/mode_guided.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -10000,11 +9870,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Math/matrix3.cpp", 
+      "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus_Maxell.cpp", 
       "-c", 
-      "-olibraries/AP_Math/matrix3.cpp.0.o"
+      "-olibraries/AP_BattMonitor/AP_BattMonitor_SMBus_Maxell.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_Math/matrix3.cpp"
+    "file": "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus_Maxell.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -10562,11 +10432,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp", 
+      "../../libraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp", 
       "-c", 
-      "-olibraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp.0.o"
+      "-olibraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp"
+    "file": "../../libraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -10837,11 +10707,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Notify/DiscreteRGBLed.cpp", 
+      "../../libraries/SITL/SIM_Tracker.cpp", 
       "-c", 
-      "-olibraries/AP_Notify/DiscreteRGBLed.cpp.0.o"
+      "-olibraries/SITL/SIM_Tracker.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_Notify/DiscreteRGBLed.cpp"
+    "file": "../../libraries/SITL/SIM_Tracker.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -12114,11 +11984,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_BattMonitor/AP_BattMonitor_Sum.cpp", 
+      "../../libraries/AP_RangeFinder/AP_RangeFinder_uLanding.cpp", 
       "-c", 
-      "-olibraries/AP_BattMonitor/AP_BattMonitor_Sum.cpp.0.o"
+      "-olibraries/AP_RangeFinder/AP_RangeFinder_uLanding.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_BattMonitor/AP_BattMonitor_Sum.cpp"
+    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_uLanding.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -13328,11 +13198,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Baro/AP_Baro_FBM320.cpp", 
+      "../../libraries/AP_GPS/GPS_Backend.cpp", 
       "-c", 
-      "-olibraries/AP_Baro/AP_Baro_FBM320.cpp.0.o"
+      "-olibraries/AP_GPS/GPS_Backend.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_Baro/AP_Baro_FBM320.cpp"
+    "file": "../../libraries/AP_GPS/GPS_Backend.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -13671,61 +13541,6 @@
       "-olibraries/AP_GPS/AP_GPS_GSOF.cpp.0.o"
     ], 
     "file": "../../libraries/AP_GPS/AP_GPS_GSOF.cpp"
-  }, 
-  {
-    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
-    "arguments": [
-      "/usr/lib/ccache/g++", 
-      "-std=gnu++14", 
-      "-fdata-sections", 
-      "-ffunction-sections", 
-      "-fexceptions", 
-      "-fsigned-char", 
-      "-Wall", 
-      "-Wextra", 
-      "-Wformat", 
-      "-Wshadow", 
-      "-Wpointer-arith", 
-      "-Wcast-align", 
-      "-Wundef", 
-      "-Wno-unused-parameter", 
-      "-Wno-missing-field-initializers", 
-      "-Wno-reorder", 
-      "-Wno-redundant-decls", 
-      "-Wno-unknown-pragmas", 
-      "-Werror=format-security", 
-      "-Werror=enum-compare", 
-      "-Werror=array-bounds", 
-      "-Werror=uninitialized", 
-      "-Werror=init-self", 
-      "-Werror=narrowing", 
-      "-Werror=return-type", 
-      "-Werror=switch", 
-      "-Werror=sign-compare", 
-      "-Werror=unused-result", 
-      "-Werror=return-type", 
-      "-Wfatal-errors", 
-      "-Wno-trigraphs", 
-      "-Werror=unused-but-set-variable", 
-      "-Werror=float-equal", 
-      "-O3", 
-      "-MMD", 
-      "-include", 
-      "ap_config.h", 
-      "-Ilibraries", 
-      "-Ilibraries/GCS_MAVLink", 
-      "-I.", 
-      "-I../../libraries", 
-      "-I../../libraries/AP_Common/missing", 
-      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
-      "-DAP_SCRIPTING_CHECKS=1", 
-      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
-      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp", 
-      "-c", 
-      "-olibraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp.0.o"
-    ], 
-    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -14335,61 +14150,6 @@
       "-olibraries/AP_Logger/AP_Logger_MAVLinkLogTransfer.cpp.0.o"
     ], 
     "file": "../../libraries/AP_Logger/AP_Logger_MAVLinkLogTransfer.cpp"
-  }, 
-  {
-    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
-    "arguments": [
-      "/usr/lib/ccache/g++", 
-      "-std=gnu++14", 
-      "-fdata-sections", 
-      "-ffunction-sections", 
-      "-fexceptions", 
-      "-fsigned-char", 
-      "-Wall", 
-      "-Wextra", 
-      "-Wformat", 
-      "-Wshadow", 
-      "-Wpointer-arith", 
-      "-Wcast-align", 
-      "-Wundef", 
-      "-Wno-unused-parameter", 
-      "-Wno-missing-field-initializers", 
-      "-Wno-reorder", 
-      "-Wno-redundant-decls", 
-      "-Wno-unknown-pragmas", 
-      "-Werror=format-security", 
-      "-Werror=enum-compare", 
-      "-Werror=array-bounds", 
-      "-Werror=uninitialized", 
-      "-Werror=init-self", 
-      "-Werror=narrowing", 
-      "-Werror=return-type", 
-      "-Werror=switch", 
-      "-Werror=sign-compare", 
-      "-Werror=unused-result", 
-      "-Werror=return-type", 
-      "-Wfatal-errors", 
-      "-Wno-trigraphs", 
-      "-Werror=unused-but-set-variable", 
-      "-Werror=float-equal", 
-      "-O3", 
-      "-MMD", 
-      "-include", 
-      "ap_config.h", 
-      "-Ilibraries", 
-      "-Ilibraries/GCS_MAVLink", 
-      "-I.", 
-      "-I../../libraries", 
-      "-I../../libraries/AP_Common/missing", 
-      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
-      "-DAP_SCRIPTING_CHECKS=1", 
-      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
-      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp", 
-      "-c", 
-      "-olibraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp.0.o"
-    ], 
-    "file": "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -15543,11 +15303,15 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Proximity/AP_Proximity_RangeFinder.cpp", 
+      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
+      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
+      "-DSKETCH=\"ArduCopter\"", 
+      "-DSKETCHNAME=\"ArduCopter\"", 
+      "../../ArduCopter/ArduCopter.cpp", 
       "-c", 
-      "-olibraries/AP_Proximity/AP_Proximity_RangeFinder.cpp.0.o"
+      "-oArduCopter/ArduCopter.cpp.27.o"
     ], 
-    "file": "../../libraries/AP_Proximity/AP_Proximity_RangeFinder.cpp"
+    "file": "../../ArduCopter/ArduCopter.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -15653,11 +15417,14 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/SITL/SIM_QuadPlane.cpp", 
+      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
+      "-DSKETCH=\"ArduCopter\"", 
+      "-DSKETCHNAME=\"ArduCopter\"", 
+      "../../libraries/AP_InertialSensor/AP_InertialSensor.cpp", 
       "-c", 
-      "-olibraries/SITL/SIM_QuadPlane.cpp.0.o"
+      "-olibraries/AP_InertialSensor/AP_InertialSensor.cpp.4.o"
     ], 
-    "file": "../../libraries/SITL/SIM_QuadPlane.cpp"
+    "file": "../../libraries/AP_InertialSensor/AP_InertialSensor.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -16541,11 +16308,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp", 
+      "../../libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp", 
       "-c", 
-      "-olibraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp.0.o"
+      "-olibraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_NavEKF2/AP_NavEKF2_PosVelFusion.cpp"
+    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_PulsedLightLRF.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -18367,65 +18134,6 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
-      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
-      "-DSKETCH=\"ArduCopter\"", 
-      "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../ArduCopter/mode_rtl.cpp", 
-      "-c", 
-      "-oArduCopter/mode_rtl.cpp.27.o"
-    ], 
-    "file": "../../ArduCopter/mode_rtl.cpp"
-  }, 
-  {
-    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
-    "arguments": [
-      "/usr/lib/ccache/g++", 
-      "-std=gnu++14", 
-      "-fdata-sections", 
-      "-ffunction-sections", 
-      "-fexceptions", 
-      "-fsigned-char", 
-      "-Wall", 
-      "-Wextra", 
-      "-Wformat", 
-      "-Wshadow", 
-      "-Wpointer-arith", 
-      "-Wcast-align", 
-      "-Wundef", 
-      "-Wno-unused-parameter", 
-      "-Wno-missing-field-initializers", 
-      "-Wno-reorder", 
-      "-Wno-redundant-decls", 
-      "-Wno-unknown-pragmas", 
-      "-Werror=format-security", 
-      "-Werror=enum-compare", 
-      "-Werror=array-bounds", 
-      "-Werror=uninitialized", 
-      "-Werror=init-self", 
-      "-Werror=narrowing", 
-      "-Werror=return-type", 
-      "-Werror=switch", 
-      "-Werror=sign-compare", 
-      "-Werror=unused-result", 
-      "-Werror=return-type", 
-      "-Wfatal-errors", 
-      "-Wno-trigraphs", 
-      "-Werror=unused-but-set-variable", 
-      "-Werror=float-equal", 
-      "-O3", 
-      "-MMD", 
-      "-include", 
-      "ap_config.h", 
-      "-Ilibraries", 
-      "-Ilibraries/GCS_MAVLink", 
-      "-I.", 
-      "-I../../libraries", 
-      "-I../../libraries/AP_Common/missing", 
-      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
-      "-DAP_SCRIPTING_CHECKS=1", 
-      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
-      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
       "../../libraries/AP_RCProtocol/AP_RCProtocol_ST24.cpp", 
       "-c", 
       "-olibraries/AP_RCProtocol/AP_RCProtocol_ST24.cpp.0.o"
@@ -19098,6 +18806,61 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
+      "../../libraries/AP_Terrain/TerrainGCS.cpp", 
+      "-c", 
+      "-olibraries/AP_Terrain/TerrainGCS.cpp.0.o"
+    ], 
+    "file": "../../libraries/AP_Terrain/TerrainGCS.cpp"
+  }, 
+  {
+    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
+    "arguments": [
+      "/usr/lib/ccache/g++", 
+      "-std=gnu++14", 
+      "-fdata-sections", 
+      "-ffunction-sections", 
+      "-fexceptions", 
+      "-fsigned-char", 
+      "-Wall", 
+      "-Wextra", 
+      "-Wformat", 
+      "-Wshadow", 
+      "-Wpointer-arith", 
+      "-Wcast-align", 
+      "-Wundef", 
+      "-Wno-unused-parameter", 
+      "-Wno-missing-field-initializers", 
+      "-Wno-reorder", 
+      "-Wno-redundant-decls", 
+      "-Wno-unknown-pragmas", 
+      "-Werror=format-security", 
+      "-Werror=enum-compare", 
+      "-Werror=array-bounds", 
+      "-Werror=uninitialized", 
+      "-Werror=init-self", 
+      "-Werror=narrowing", 
+      "-Werror=return-type", 
+      "-Werror=switch", 
+      "-Werror=sign-compare", 
+      "-Werror=unused-result", 
+      "-Werror=return-type", 
+      "-Wfatal-errors", 
+      "-Wno-trigraphs", 
+      "-Werror=unused-but-set-variable", 
+      "-Werror=float-equal", 
+      "-O3", 
+      "-MMD", 
+      "-include", 
+      "ap_config.h", 
+      "-Ilibraries", 
+      "-Ilibraries/GCS_MAVLink", 
+      "-I.", 
+      "-I../../libraries", 
+      "-I../../libraries/AP_Common/missing", 
+      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
+      "-DAP_SCRIPTING_CHECKS=1", 
+      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
+      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
       "../../libraries/AP_Notify/Buzzer.cpp", 
       "-c", 
       "-olibraries/AP_Notify/Buzzer.cpp.0.o"
@@ -19436,6 +19199,61 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
+      "../../libraries/AP_RCProtocol/AP_RCProtocol_SBUS.cpp", 
+      "-c", 
+      "-olibraries/AP_RCProtocol/AP_RCProtocol_SBUS.cpp.0.o"
+    ], 
+    "file": "../../libraries/AP_RCProtocol/AP_RCProtocol_SBUS.cpp"
+  }, 
+  {
+    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
+    "arguments": [
+      "/usr/lib/ccache/g++", 
+      "-std=gnu++14", 
+      "-fdata-sections", 
+      "-ffunction-sections", 
+      "-fexceptions", 
+      "-fsigned-char", 
+      "-Wall", 
+      "-Wextra", 
+      "-Wformat", 
+      "-Wshadow", 
+      "-Wpointer-arith", 
+      "-Wcast-align", 
+      "-Wundef", 
+      "-Wno-unused-parameter", 
+      "-Wno-missing-field-initializers", 
+      "-Wno-reorder", 
+      "-Wno-redundant-decls", 
+      "-Wno-unknown-pragmas", 
+      "-Werror=format-security", 
+      "-Werror=enum-compare", 
+      "-Werror=array-bounds", 
+      "-Werror=uninitialized", 
+      "-Werror=init-self", 
+      "-Werror=narrowing", 
+      "-Werror=return-type", 
+      "-Werror=switch", 
+      "-Werror=sign-compare", 
+      "-Werror=unused-result", 
+      "-Werror=return-type", 
+      "-Wfatal-errors", 
+      "-Wno-trigraphs", 
+      "-Werror=unused-but-set-variable", 
+      "-Werror=float-equal", 
+      "-O3", 
+      "-MMD", 
+      "-include", 
+      "ap_config.h", 
+      "-Ilibraries", 
+      "-Ilibraries/GCS_MAVLink", 
+      "-I.", 
+      "-I../../libraries", 
+      "-I../../libraries/AP_Common/missing", 
+      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
+      "-DAP_SCRIPTING_CHECKS=1", 
+      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
+      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
       "../../libraries/AP_HAL_SITL/Semaphores.cpp", 
       "-c", 
       "-olibraries/AP_HAL_SITL/Semaphores.cpp.0.o"
@@ -19711,11 +19529,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_RangeFinder/AP_RangeFinder_MAVLink.cpp", 
+      "../../libraries/AP_HAL_SITL/RCInput.cpp", 
       "-c", 
-      "-olibraries/AP_RangeFinder/AP_RangeFinder_MAVLink.cpp.0.o"
+      "-olibraries/AP_HAL_SITL/RCInput.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_MAVLink.cpp"
+    "file": "../../libraries/AP_HAL_SITL/RCInput.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -19876,11 +19694,15 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Common/c++.cpp", 
+      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
+      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
+      "-DSKETCH=\"ArduCopter\"", 
+      "-DSKETCHNAME=\"ArduCopter\"", 
+      "../../ArduCopter/precision_landing.cpp", 
       "-c", 
-      "-olibraries/AP_Common/c++.cpp.0.o"
+      "-oArduCopter/precision_landing.cpp.27.o"
     ], 
-    "file": "../../libraries/AP_Common/c++.cpp"
+    "file": "../../ArduCopter/precision_landing.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -20496,14 +20318,15 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
+      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
       "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
       "-DSKETCH=\"ArduCopter\"", 
       "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../libraries/AP_Avoidance/AP_Avoidance.cpp", 
+      "../../ArduCopter/AP_State.cpp", 
       "-c", 
-      "-olibraries/AP_Avoidance/AP_Avoidance.cpp.4.o"
+      "-oArduCopter/AP_State.cpp.27.o"
     ], 
-    "file": "../../libraries/AP_Avoidance/AP_Avoidance.cpp"
+    "file": "../../ArduCopter/AP_State.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -21837,11 +21660,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_RangeFinder/AP_RangeFinder_uLanding.cpp", 
+      "../../libraries/AP_BattMonitor/AP_BattMonitor_Sum.cpp", 
       "-c", 
-      "-olibraries/AP_RangeFinder/AP_RangeFinder_uLanding.cpp.0.o"
+      "-olibraries/AP_BattMonitor/AP_BattMonitor_Sum.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_uLanding.cpp"
+    "file": "../../libraries/AP_BattMonitor/AP_BattMonitor_Sum.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -21892,11 +21715,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_GPS/GPS_Backend.cpp", 
+      "../../libraries/AP_Baro/AP_Baro_FBM320.cpp", 
       "-c", 
-      "-olibraries/AP_GPS/GPS_Backend.cpp.0.o"
+      "-olibraries/AP_Baro/AP_Baro_FBM320.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_GPS/GPS_Backend.cpp"
+    "file": "../../libraries/AP_Baro/AP_Baro_FBM320.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -22007,6 +21830,61 @@
       "-olibraries/AP_Compass/CompassCalibrator.cpp.0.o"
     ], 
     "file": "../../libraries/AP_Compass/CompassCalibrator.cpp"
+  }, 
+  {
+    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
+    "arguments": [
+      "/usr/lib/ccache/g++", 
+      "-std=gnu++14", 
+      "-fdata-sections", 
+      "-ffunction-sections", 
+      "-fexceptions", 
+      "-fsigned-char", 
+      "-Wall", 
+      "-Wextra", 
+      "-Wformat", 
+      "-Wshadow", 
+      "-Wpointer-arith", 
+      "-Wcast-align", 
+      "-Wundef", 
+      "-Wno-unused-parameter", 
+      "-Wno-missing-field-initializers", 
+      "-Wno-reorder", 
+      "-Wno-redundant-decls", 
+      "-Wno-unknown-pragmas", 
+      "-Werror=format-security", 
+      "-Werror=enum-compare", 
+      "-Werror=array-bounds", 
+      "-Werror=uninitialized", 
+      "-Werror=init-self", 
+      "-Werror=narrowing", 
+      "-Werror=return-type", 
+      "-Werror=switch", 
+      "-Werror=sign-compare", 
+      "-Werror=unused-result", 
+      "-Werror=return-type", 
+      "-Wfatal-errors", 
+      "-Wno-trigraphs", 
+      "-Werror=unused-but-set-variable", 
+      "-Werror=float-equal", 
+      "-O3", 
+      "-MMD", 
+      "-include", 
+      "ap_config.h", 
+      "-Ilibraries", 
+      "-Ilibraries/GCS_MAVLink", 
+      "-I.", 
+      "-I../../libraries", 
+      "-I../../libraries/AP_Common/missing", 
+      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
+      "-DAP_SCRIPTING_CHECKS=1", 
+      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
+      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
+      "../../libraries/AP_Airspeed/Airspeed_Calibration.cpp", 
+      "-c", 
+      "-olibraries/AP_Airspeed/Airspeed_Calibration.cpp.0.o"
+    ], 
+    "file": "../../libraries/AP_Airspeed/Airspeed_Calibration.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -22387,11 +22265,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Airspeed/AP_Airspeed_MS4525.cpp", 
+      "../../libraries/AP_RTC/AP_RTC.cpp", 
       "-c", 
-      "-olibraries/AP_Airspeed/AP_Airspeed_MS4525.cpp.0.o"
+      "-olibraries/AP_RTC/AP_RTC.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_Airspeed/AP_Airspeed_MS4525.cpp"
+    "file": "../../libraries/AP_RTC/AP_RTC.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -24387,11 +24265,15 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Gripper/AP_Gripper_Backend.cpp", 
+      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
+      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
+      "-DSKETCH=\"ArduCopter\"", 
+      "-DSKETCHNAME=\"ArduCopter\"", 
+      "../../ArduCopter/mode_rtl.cpp", 
       "-c", 
-      "-olibraries/AP_Gripper/AP_Gripper_Backend.cpp.0.o"
+      "-oArduCopter/mode_rtl.cpp.27.o"
     ], 
-    "file": "../../libraries/AP_Gripper/AP_Gripper_Backend.cpp"
+    "file": "../../ArduCopter/mode_rtl.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -24886,6 +24768,61 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
+      "../../libraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp", 
+      "-c", 
+      "-olibraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp.0.o"
+    ], 
+    "file": "../../libraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp"
+  }, 
+  {
+    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
+    "arguments": [
+      "/usr/lib/ccache/g++", 
+      "-std=gnu++14", 
+      "-fdata-sections", 
+      "-ffunction-sections", 
+      "-fexceptions", 
+      "-fsigned-char", 
+      "-Wall", 
+      "-Wextra", 
+      "-Wformat", 
+      "-Wshadow", 
+      "-Wpointer-arith", 
+      "-Wcast-align", 
+      "-Wundef", 
+      "-Wno-unused-parameter", 
+      "-Wno-missing-field-initializers", 
+      "-Wno-reorder", 
+      "-Wno-redundant-decls", 
+      "-Wno-unknown-pragmas", 
+      "-Werror=format-security", 
+      "-Werror=enum-compare", 
+      "-Werror=array-bounds", 
+      "-Werror=uninitialized", 
+      "-Werror=init-self", 
+      "-Werror=narrowing", 
+      "-Werror=return-type", 
+      "-Werror=switch", 
+      "-Werror=sign-compare", 
+      "-Werror=unused-result", 
+      "-Werror=return-type", 
+      "-Wfatal-errors", 
+      "-Wno-trigraphs", 
+      "-Werror=unused-but-set-variable", 
+      "-Werror=float-equal", 
+      "-O3", 
+      "-MMD", 
+      "-include", 
+      "ap_config.h", 
+      "-Ilibraries", 
+      "-Ilibraries/GCS_MAVLink", 
+      "-I.", 
+      "-I../../libraries", 
+      "-I../../libraries/AP_Common/missing", 
+      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
+      "-DAP_SCRIPTING_CHECKS=1", 
+      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
+      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
       "../../libraries/AP_Compass/AP_Compass_LSM9DS1.cpp", 
       "-c", 
       "-olibraries/AP_Compass/AP_Compass_LSM9DS1.cpp.0.o"
@@ -25106,11 +25043,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp", 
+      "../../libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp", 
       "-c", 
-      "-olibraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp.0.o"
+      "-olibraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_NavEKF3/AP_NavEKF3_GyroBias.cpp"
+    "file": "../../libraries/AP_RangeFinder/AP_RangeFinder_LightWareSerial.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -25326,11 +25263,15 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/GCS_MAVLink/GCS_Fence.cpp", 
+      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
+      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
+      "-DSKETCH=\"ArduCopter\"", 
+      "-DSKETCHNAME=\"ArduCopter\"", 
+      "../../ArduCopter/navigation.cpp", 
       "-c", 
-      "-olibraries/GCS_MAVLink/GCS_Fence.cpp.0.o"
+      "-oArduCopter/navigation.cpp.27.o"
     ], 
-    "file": "../../libraries/GCS_MAVLink/GCS_Fence.cpp"
+    "file": "../../ArduCopter/navigation.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -25550,11 +25491,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Camera/AP_Camera.cpp", 
+      "../../libraries/AP_Motors/AP_MotorsTri.cpp", 
       "-c", 
-      "-olibraries/AP_Camera/AP_Camera.cpp.0.o"
+      "-olibraries/AP_Motors/AP_MotorsTri.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_Camera/AP_Camera.cpp"
+    "file": "../../libraries/AP_Motors/AP_MotorsTri.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -26281,11 +26222,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Airspeed/AP_Airspeed_Health.cpp", 
+      "../../libraries/AP_InertialSensor/AP_InertialSensor_Invensense.cpp", 
       "-c", 
-      "-olibraries/AP_Airspeed/AP_Airspeed_Health.cpp.0.o"
+      "-olibraries/AP_InertialSensor/AP_InertialSensor_Invensense.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_Airspeed/AP_Airspeed_Health.cpp"
+    "file": "../../libraries/AP_InertialSensor/AP_InertialSensor_Invensense.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -26391,11 +26332,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Terrain/TerrainGCS.cpp", 
+      "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp", 
       "-c", 
-      "-olibraries/AP_Terrain/TerrainGCS.cpp.0.o"
+      "-olibraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_Terrain/TerrainGCS.cpp"
+    "file": "../../libraries/AP_BattMonitor/AP_BattMonitor_SMBus.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -26947,14 +26888,66 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
-      "-DSKETCH=\"ArduCopter\"", 
-      "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../libraries/AP_InertialSensor/AP_InertialSensor.cpp", 
+      "../../libraries/AP_HAL_Empty/HAL_Empty_Class.cpp", 
       "-c", 
-      "-olibraries/AP_InertialSensor/AP_InertialSensor.cpp.4.o"
+      "-olibraries/AP_HAL_Empty/HAL_Empty_Class.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_InertialSensor/AP_InertialSensor.cpp"
+    "file": "../../libraries/AP_HAL_Empty/HAL_Empty_Class.cpp"
+  }, 
+  {
+    "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
+    "arguments": [
+      "/usr/lib/ccache/g++", 
+      "-std=gnu++14", 
+      "-fdata-sections", 
+      "-ffunction-sections", 
+      "-fexceptions", 
+      "-fsigned-char", 
+      "-Wall", 
+      "-Wextra", 
+      "-Wformat", 
+      "-Wshadow", 
+      "-Wpointer-arith", 
+      "-Wcast-align", 
+      "-Wundef", 
+      "-Wno-unused-parameter", 
+      "-Wno-missing-field-initializers", 
+      "-Wno-reorder", 
+      "-Wno-redundant-decls", 
+      "-Wno-unknown-pragmas", 
+      "-Werror=format-security", 
+      "-Werror=enum-compare", 
+      "-Werror=array-bounds", 
+      "-Werror=uninitialized", 
+      "-Werror=init-self", 
+      "-Werror=narrowing", 
+      "-Werror=return-type", 
+      "-Werror=switch", 
+      "-Werror=sign-compare", 
+      "-Werror=unused-result", 
+      "-Werror=return-type", 
+      "-Wfatal-errors", 
+      "-Wno-trigraphs", 
+      "-Werror=unused-but-set-variable", 
+      "-Werror=float-equal", 
+      "-O3", 
+      "-MMD", 
+      "-include", 
+      "ap_config.h", 
+      "-Ilibraries", 
+      "-Ilibraries/GCS_MAVLink", 
+      "-I.", 
+      "-I../../libraries", 
+      "-I../../libraries/AP_Common/missing", 
+      "-DSKETCHBOOK=\"/home/pritamdash/Documents/PID-Piper/pid-piper/simulator\"", 
+      "-DAP_SCRIPTING_CHECKS=1", 
+      "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
+      "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
+      "../../libraries/SITL/SIM_QuadPlane.cpp", 
+      "-c", 
+      "-olibraries/SITL/SIM_QuadPlane.cpp.0.o"
+    ], 
+    "file": "../../libraries/SITL/SIM_QuadPlane.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -27617,11 +27610,14 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_RCProtocol/AP_RCProtocol_SBUS.cpp", 
+      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
+      "-DSKETCH=\"ArduCopter\"", 
+      "-DSKETCHNAME=\"ArduCopter\"", 
+      "../../libraries/AP_BLHeli/AP_BLHeli.cpp", 
       "-c", 
-      "-olibraries/AP_RCProtocol/AP_RCProtocol_SBUS.cpp.0.o"
+      "-olibraries/AP_BLHeli/AP_BLHeli.cpp.4.o"
     ], 
-    "file": "../../libraries/AP_RCProtocol/AP_RCProtocol_SBUS.cpp"
+    "file": "../../libraries/AP_BLHeli/AP_BLHeli.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -28115,11 +28111,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_RTC/AP_RTC.cpp", 
+      "../../libraries/AP_Airspeed/AP_Airspeed_MS4525.cpp", 
       "-c", 
-      "-olibraries/AP_RTC/AP_RTC.cpp.0.o"
+      "-olibraries/AP_Airspeed/AP_Airspeed_MS4525.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_RTC/AP_RTC.cpp"
+    "file": "../../libraries/AP_Airspeed/AP_Airspeed_MS4525.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -28225,11 +28221,15 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Airspeed/Airspeed_Calibration.cpp", 
+      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
+      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
+      "-DSKETCH=\"ArduCopter\"", 
+      "-DSKETCHNAME=\"ArduCopter\"", 
+      "../../ArduCopter/mode_guided.cpp", 
       "-c", 
-      "-olibraries/AP_Airspeed/Airspeed_Calibration.cpp.0.o"
+      "-oArduCopter/mode_guided.cpp.27.o"
     ], 
-    "file": "../../libraries/AP_Airspeed/Airspeed_Calibration.cpp"
+    "file": "../../ArduCopter/mode_guided.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -29064,11 +29064,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_HAL_Empty/HAL_Empty_Class.cpp", 
+      "../../libraries/AP_Gripper/AP_Gripper_Backend.cpp", 
       "-c", 
-      "-olibraries/AP_HAL_Empty/HAL_Empty_Class.cpp.0.o"
+      "-olibraries/AP_Gripper/AP_Gripper_Backend.cpp.0.o"
     ], 
-    "file": "../../libraries/AP_HAL_Empty/HAL_Empty_Class.cpp"
+    "file": "../../libraries/AP_Gripper/AP_Gripper_Backend.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
