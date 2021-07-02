@@ -1024,6 +1024,8 @@ void AC_PosControl::run_xy_controller(float dt)
         if(checkAttackTime == 1)
         {
             curr_pos.x = curr_pos.x + falseData;
+            //curr_pos.y = curr_pos.y + falseData;
+
         }
         flag = checkAttackTime;
     }

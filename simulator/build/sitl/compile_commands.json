@@ -24265,15 +24265,11 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
-      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
-      "-DSKETCH=\"ArduCopter\"", 
-      "-DSKETCHNAME=\"ArduCopter\"", 
-      "../../ArduCopter/mode_rtl.cpp", 
+      "../../libraries/AP_Gripper/AP_Gripper_Backend.cpp", 
       "-c", 
-      "-oArduCopter/mode_rtl.cpp.27.o"
+      "-olibraries/AP_Gripper/AP_Gripper_Backend.cpp.0.o"
     ], 
-    "file": "../../ArduCopter/mode_rtl.cpp"
+    "file": "../../libraries/AP_Gripper/AP_Gripper_Backend.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 
@@ -29064,11 +29060,15 @@
       "-DAP_SCRIPTING_CHECKS=1", 
       "-DCONFIG_HAL_BOARD=HAL_BOARD_SITL", 
       "-DCONFIG_HAL_BOARD_SUBTYPE=HAL_BOARD_SUBTYPE_NONE", 
-      "../../libraries/AP_Gripper/AP_Gripper_Backend.cpp", 
+      "-DFRAME_CONFIG=MULTICOPTER_FRAME", 
+      "-DAPM_BUILD_DIRECTORY=APM_BUILD_ArduCopter", 
+      "-DSKETCH=\"ArduCopter\"", 
+      "-DSKETCHNAME=\"ArduCopter\"", 
+      "../../ArduCopter/mode_rtl.cpp", 
       "-c", 
-      "-olibraries/AP_Gripper/AP_Gripper_Backend.cpp.0.o"
+      "-oArduCopter/mode_rtl.cpp.27.o"
     ], 
-    "file": "../../libraries/AP_Gripper/AP_Gripper_Backend.cpp"
+    "file": "../../ArduCopter/mode_rtl.cpp"
   }, 
   {
     "directory": "/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/build/sitl", 

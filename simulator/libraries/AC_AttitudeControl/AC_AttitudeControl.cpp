@@ -269,7 +269,7 @@ void AC_AttitudeControl::input_euler_angle_roll_pitch_euler_rate_yaw(float euler
     /*
      * PID-Piper
      */
-
+	/*
 	_piper.getPosControlXY(AC_AttitudeControl::accX, AC_AttitudeControl::accY, AC_AttitudeControl::accZ,
 			_ahrs.get_gyro_latest().x, _ahrs.get_gyro_latest().y, _ahrs.get_gyro_latest().z,
 			AC_AttitudeControl::posX, AC_AttitudeControl::posY, AC_AttitudeControl::posZ,
@@ -278,22 +278,58 @@ void AC_AttitudeControl::input_euler_angle_roll_pitch_euler_rate_yaw(float euler
 			AC_AttitudeControl::velErrorX, AC_AttitudeControl::velErrorY,
 			_ahrs.roll_sensor, _ahrs.pitch_sensor);
 
+
 	_piper.y_PID.x = euler_roll_angle_cd;
 	_piper.y_PID.y = euler_pitch_angle_cd;
 	_piper.y_PID.z = euler_yaw_rate_cds;
 
 	piper_angles = _piper.recoveryMonitor();
+	 */
+
+	/*
+	 * PID-Piper
+	 */
+	/*
+	float roll_angle = radians(piper_angles.x*0.01f);
+	float pitch_angle = radians(piper_angles.y*0.01f);
+	float yaw_angle = radians(piper_angles.z*0.01f);
+	*/
+	//write_to_piper(piper_angles, _piper.y_PID);
+
+	/*
+	 * Pritam Dash
+	 */
+	//Write_Pos(_attitude_target_euler_angle.x);
+	//Write_Pos(_attitude_target_euler_angle.y);
+	//Write_Pos(_attitude_target_euler_angle.z);
+	//Write_Pos();
+
+	/*
+	 * Writing target after error correction
+	 */
+	/*
+	Write_IO_Yaw_Target(euler_yaw_rate);
+	Write_IO_Yaw_Target(_attitude_target_euler_rate.z);
+	Write_IO_Yaw_Target(_attitude_target_euler_angle.z);
+	Write_IO_Yaw_Target();
+
+	Write_IO_Roll_Target(euler_roll_angle);
+	Write_IO_Roll_Target(_attitude_target_euler_rate.x);
+	Write_IO_Roll_Target(_attitude_target_euler_angle.x);
+	Write_IO_Roll_Target();
+
+	Write_IO_Pitch_Target(euler_pitch_angle);
+	Write_IO_Pitch_Target(_attitude_target_euler_rate.y);
+	Write_IO_Pitch_Target(_attitude_target_euler_angle.y);
+	Write_IO_Pitch_Target();
+	*/
+
 
     // Convert from centidegrees on public interface to radians
     float euler_roll_angle = radians(euler_roll_angle_cd*0.01f);
     float euler_pitch_angle = radians(euler_pitch_angle_cd*0.01f);
     float euler_yaw_rate = radians(euler_yaw_rate_cds*0.01f);
-	/*
-	// PID-Piper
-	float euler_roll_angle = radians(piper_angles.x*0.01f);
-	float euler_pitch_angle = radians(piper_angles.y*0.01f);
-	float euler_yaw_rate = radians(piper_angles.z*0.01f);
-	*/
+
 
     // calculate the attitude target euler angles
     _attitude_target_quat.to_euler(_attitude_target_euler_angle.x, _attitude_target_euler_angle.y, _attitude_target_euler_angle.z);
@@ -337,33 +373,6 @@ void AC_AttitudeControl::input_euler_angle_roll_pitch_euler_rate_yaw(float euler
     // Call quaternion attitude controller
     attitude_controller_run_quat();
 
-    /*
-     * Pritam Dash
-     */
-    //Write_Pos(_attitude_target_euler_angle.x);
-    //Write_Pos(_attitude_target_euler_angle.y);
-    //Write_Pos(_attitude_target_euler_angle.z);
-    //Write_Pos();
-
-    /*
-     * Writing target after error correction
-     */
-    /*Write_IO_Yaw_Target(euler_yaw_rate);
-    Write_IO_Yaw_Target(_attitude_target_euler_rate.z);
-    Write_IO_Yaw_Target(_attitude_target_euler_angle.z);
-    Write_IO_Yaw_Target();
-
-    Write_IO_Roll_Target(euler_roll_angle);
-    Write_IO_Roll_Target(_attitude_target_euler_rate.x);
-    Write_IO_Roll_Target(_attitude_target_euler_angle.x);
-    Write_IO_Roll_Target();
-
-    Write_IO_Pitch_Target(euler_pitch_angle);
-    Write_IO_Pitch_Target(_attitude_target_euler_rate.y);
-    Write_IO_Pitch_Target(_attitude_target_euler_angle.y);
-    Write_IO_Pitch_Target();*/
-
-
 }
 
 // Command an euler roll, pitch and yaw angle with angular velocity feedforward and smoothing
@@ -372,7 +381,7 @@ void AC_AttitudeControl::input_euler_angle_roll_pitch_yaw(float euler_roll_angle
 	/*
 	 * PID-Piper
 	 */
-	/*
+
 	_piper.getPosControlXY(AC_AttitudeControl::accX, AC_AttitudeControl::accY, AC_AttitudeControl::accZ,
 			_ahrs.get_gyro_latest().x, _ahrs.get_gyro_latest().y, _ahrs.get_gyro_latest().z,
 			AC_AttitudeControl::posX, AC_AttitudeControl::posY, AC_AttitudeControl::posZ,
@@ -381,25 +390,24 @@ void AC_AttitudeControl::input_euler_angle_roll_pitch_yaw(float euler_roll_angle
 			AC_AttitudeControl::velErrorX, AC_AttitudeControl::velErrorY,
 			_ahrs.roll_sensor, _ahrs.pitch_sensor);
 
-	_piper.y_PID.x = euler_roll_angle_cd;
-	_piper.y_PID.y = euler_pitch_angle_cd;
-	_piper.y_PID.z = euler_yaw_angle_cd;
-
-	piper_angles = _piper.recoveryMonitor();
-
-	write_to_piper(piper_angles, _piper.y_PID);
-	*/
-    // Convert from centidegrees on public interface to radians
+	// Convert from centidegrees on public interface to radians
     float euler_roll_angle = radians(euler_roll_angle_cd*0.01f);
     float euler_pitch_angle = radians(euler_pitch_angle_cd*0.01f);
     float euler_yaw_angle = radians(euler_yaw_angle_cd*0.01f);
 
     /*
-	// PID-Piper
-	float euler_roll_angle = radians(piper_angles.x*0.01f);
-	float euler_pitch_angle = radians(piper_angles.y*0.01f);
-	float euler_yaw_angle = radians(piper_angles.z*0.01f);
-	*/
+	 * PID-Piper
+	 */
+
+    _piper.y_PID.x = euler_roll_angle;
+	_piper.y_PID.y = euler_pitch_angle;
+	_piper.y_PID.z = euler_yaw_angle;
+
+	piper_angles = _piper.recoveryMonitor();
+
+	euler_roll_angle = piper_angles.x;
+	euler_pitch_angle = piper_angles.y;
+	euler_yaw_angle = piper_angles.z;
 
     // calculate the attitude target euler angles
     _attitude_target_quat.to_euler(_attitude_target_euler_angle.x, _attitude_target_euler_angle.y, _attitude_target_euler_angle.z);
@@ -450,61 +458,16 @@ void AC_AttitudeControl::input_euler_angle_roll_pitch_yaw(float euler_roll_angle
     // Call quaternion attitude controller
     attitude_controller_run_quat();
 
-    /*
-     * Pritam Dash
-     */
-    /*Write_Pos(_attitude_target_euler_angle.x);
-    Write_Pos(_attitude_target_euler_angle.y);
-    Write_Pos(_attitude_target_euler_angle.z);
-    Write_Pos();*/
-
-    /*
-     * Write rotation rates
-     */
-    /*
-    Write_IO_Yaw_Target(euler_yaw_angle);
-    Write_IO_Yaw_Target(_attitude_target_euler_rate.z);
-    Write_IO_Yaw_Target(_attitude_target_euler_angle.z);
-    Write_IO_Yaw_Target();
-
-    Write_IO_Roll_Target(euler_roll_angle);
-    Write_IO_Roll_Target(_attitude_target_euler_rate.x);
-    Write_IO_Roll_Target(_attitude_target_euler_angle.x);
-    Write_IO_Roll_Target();
-
-    Write_IO_Pitch_Target(euler_pitch_angle);
-    Write_IO_Pitch_Target(_attitude_target_euler_rate.y);
-    Write_IO_Pitch_Target(_attitude_target_euler_angle.y);
-
-    Write_IO_Pitch_Target();
-	*/
-
 }
 
 // Command an euler roll, pitch, and yaw rate with angular velocity feedforward and smoothing
 void AC_AttitudeControl::input_euler_rate_roll_pitch_yaw(float euler_roll_rate_cds, float euler_pitch_rate_cds, float euler_yaw_rate_cds)
 {
-	/*
-	 * PID-Piper
-	 */
-	/*
-	_piper.y_PID.x = euler_roll_rate_cds;
-	_piper.y_PID.y = euler_pitch_rate_cds;
-	_piper.y_PID.z = euler_yaw_rate_cds;
-
-	piper_angles = _piper.recoveryMonitor();
-	*/
-
-    // Convert from centidegrees on public interface to radians
+	// Convert from centidegrees on public interface to radians
     float euler_roll_rate = radians(euler_roll_rate_cds*0.01f);
     float euler_pitch_rate = radians(euler_pitch_rate_cds*0.01f);
     float euler_yaw_rate = radians(euler_yaw_rate_cds*0.01f);
-	/*
-    // PID-Piper
-    float euler_roll_rate = radians(piper_angles.x*0.01f);
-    float euler_pitch_rate = radians(piper_angles.y*0.01f);
-    float euler_yaw_rate = radians(piper_angles.z*0.01f);
-	*/
+
     // calculate the attitude target euler angles
     _attitude_target_quat.to_euler(_attitude_target_euler_angle.x, _attitude_target_euler_angle.y, _attitude_target_euler_angle.z);
 
@@ -977,37 +940,14 @@ float AC_AttitudeControl::rate_target_to_motor_roll(float rate_actual_rads, floa
     float output = get_rate_roll_pid().get_p() + integrator + get_rate_roll_pid().get_d() + get_rate_roll_pid().get_ff(rate_target_rads);
 
     /*
-     * Pritam Dash
+     * False Data Injection
      */
-    //Write_IO(rate_error_rads);
-    //Write_IO(output);
-
-    /*
-     * Insert false data
-     */
-    /*int check = checkTimeDelayAttack();
+    int check = checkTimeDelayAttack();
     if(check==1)
     {
-        output = output + 1.0;
-    }*/
+        //output = output + 0.5;
+    }
 
-    /*
-     * Writing Roll rate
-     */
-    /*
-    Write_IO_Roll_Rate(rate_target_rads);
-    Write_IO_Roll_Rate(output);
-    Write_IO_Roll_Rate(rate_actual_rads);
-    Write_IO_Roll_Rate(_attitude_target_euler_rate.x);
-    Write_IO_Roll_Rate(_attitude_target_euler_rate.y);
-    Write_IO_Roll_Rate(_attitude_target_euler_rate.z);
-
-    Write_IO_Roll(_rate_target_ang_vel.x);
-    Write_IO_Roll(_rate_target_ang_vel.y);
-    Write_IO_Roll(_rate_target_ang_vel.z);
-
-    Write_IO_Roll_Rate();
-    */
     // Constrain output
 
     return constrain_float(output, -1.0f, 1.0f);
@@ -1032,36 +972,15 @@ float AC_AttitudeControl::rate_target_to_motor_pitch(float rate_actual_rads, flo
     // Compute output in range -1 ~ +1
     float output = get_rate_pitch_pid().get_p() + integrator + get_rate_pitch_pid().get_d() + get_rate_pitch_pid().get_ff(rate_target_rads);
 
-    /*
-     * Pritam Dash
+     /*
+     * False Data Injection
      */
-
-    /*Write_IO(rate_actual_rads);
-    Write_IO(rate_error_rads);
-    Write_IO(output);*/
-
-    /*
-     * Insert false data
-     */
-    /*int check = checkTimeDelayAttack();
+    int check = checkTimeDelayAttack();
     if(check==1)
     {
-        output = output + 0.75;
-    }*/
+        //output = output + 0.5;
+    }
 
-    /*
-     * Writing Pitch rate
-     */
-    /*
-    Write_IO_Pitch_Rate(rate_target_rads);
-    Write_IO_Pitch_Rate(output);
-    Write_IO_Pitch_Rate(rate_actual_rads);
-    Write_IO_Pitch_Rate(_attitude_target_euler_rate.x);
-    Write_IO_Pitch_Rate(_attitude_target_euler_rate.y);
-    Write_IO_Pitch_Rate(_attitude_target_euler_rate.z);
-
-    Write_IO_Pitch_Rate();
-	*/
     // Constrain output
     return constrain_float(output, -1.0f, 1.0f);
 }
@@ -1086,18 +1005,13 @@ float AC_AttitudeControl::rate_target_to_motor_yaw(float rate_actual_rads, float
     float output = get_rate_yaw_pid().get_p() + integrator + get_rate_yaw_pid().get_d() + get_rate_yaw_pid().get_ff(rate_target_rads);
 
     /*
-     * Pritam Dash
-     */
-    /*
-    Write_IO_Yaw_Rate(rate_target_rads);
-    Write_IO_Yaw_Rate(output);
-    Write_IO_Yaw_Rate(rate_actual_rads);
-    Write_IO_Yaw_Rate(_attitude_target_euler_rate.x);
-    Write_IO_Yaw_Rate(_attitude_target_euler_rate.y);
-    Write_IO_Yaw_Rate(_attitude_target_euler_rate.z);
-
-    Write_IO_Yaw_Rate();
+	* False Data Injection
 	*/
+   int check = checkTimeDelayAttack();
+   if(check==1)
+   {
+	   //output = output + 0.5;
+   }
 
    // Constrain output
     return constrain_float(output, -1.0f, 1.0f);
@@ -1200,12 +1114,6 @@ float AC_AttitudeControl::max_rate_step_bf_roll()
     float alpha = get_rate_roll_pid().get_filt_alpha();
     float alpha_remaining = 1-alpha;
 
-    /*
-     * Pritam Dash
-     */
-    //Write_Pos(2.0f*_motors.get_throttle_hover()*AC_ATTITUDE_RATE_RP_CONTROLLER_OUT_MAX/((alpha_remaining*alpha_remaining*alpha_remaining*alpha*get_rate_roll_pid().kD())/_dt + get_rate_roll_pid().kP()));
-
-
     return 2.0f*_motors.get_throttle_hover()*AC_ATTITUDE_RATE_RP_CONTROLLER_OUT_MAX/((alpha_remaining*alpha_remaining*alpha_remaining*alpha*get_rate_roll_pid().kD())/_dt + get_rate_roll_pid().kP());
 
 }
@@ -1216,12 +1124,6 @@ float AC_AttitudeControl::max_rate_step_bf_pitch()
     float alpha = get_rate_pitch_pid().get_filt_alpha();
     float alpha_remaining = 1-alpha;
 
-    /*
-     * Pritam Dash
-     */
-   // Write_Pos(2.0f*_motors.get_throttle_hover()*AC_ATTITUDE_RATE_RP_CONTROLLER_OUT_MAX/((alpha_remaining*alpha_remaining*alpha_remaining*alpha*get_rate_pitch_pid().kD())/_dt + get_rate_pitch_pid().kP()));
-
-
     return 2.0f*_motors.get_throttle_hover()*AC_ATTITUDE_RATE_RP_CONTROLLER_OUT_MAX/((alpha_remaining*alpha_remaining*alpha_remaining*alpha*get_rate_pitch_pid().kD())/_dt + get_rate_pitch_pid().kP());
 
 }
@@ -1231,12 +1133,6 @@ float AC_AttitudeControl::max_rate_step_bf_yaw()
 {
     float alpha = get_rate_yaw_pid().get_filt_alpha();
     float alpha_remaining = 1-alpha;
-
-    /*
-     * Pritam Dash
-     */
-    //Write_Pos(2.0f*_motors.get_throttle_hover()*AC_ATTITUDE_RATE_RP_CONTROLLER_OUT_MAX/((alpha_remaining*alpha_remaining*alpha_remaining*alpha*get_rate_yaw_pid().kD())/_dt + get_rate_yaw_pid().kP()));
-    //Write_Pos();
 
     return 2.0f*_motors.get_throttle_hover()*AC_ATTITUDE_RATE_RP_CONTROLLER_OUT_MAX/((alpha_remaining*alpha_remaining*alpha_remaining*alpha*get_rate_yaw_pid().kD())/_dt + get_rate_yaw_pid().kP());
 
@@ -1375,9 +1271,10 @@ int AC_AttitudeControl::checkTimePID_IO()
     }
     return 0;
 }
-/*
+
 void AC_AttitudeControl::write_to_piper(Vector3f piper, Vector3f pid)
 {
 	O_PID_Piper::write_to_file_piper(piper, pid);
 }
-*/
+
+
