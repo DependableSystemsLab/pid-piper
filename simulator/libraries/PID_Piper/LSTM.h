@@ -14,13 +14,13 @@ class LSTM
 		Vector3f targetAngle;
 
 		fdeep::model loadRollModel() {
-			return fdeep::load_model("/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/libraries/PID_Piper/models/roll-nn.json");
+			return fdeep::load_model("/pid-piper/simulator/libraries/PID_Piper/models/roll-nn.json");
 		}
 		fdeep::model loadPitchModel() {
-			return fdeep::load_model("/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/libraries/PID_Piper/models/pitch-nn.json");
+			return fdeep::load_model("/pid-piper/simulator/libraries/PID_Piper/models/pitch-nn.json");
 		}
 		fdeep::model loadYawModel() {
-			return fdeep::load_model("/home/pritamdash/Documents/PID-Piper/pid-piper/simulator/libraries/PID_Piper/models/yaw-nn.json");
+			return fdeep::load_model("/pid-piper/simulator/libraries/PID_Piper/models/yaw-nn.json");
 		}
 
 	public:

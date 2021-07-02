@@ -51,7 +51,7 @@ To run a mission, use this command:
 wp load ../Tools/autotest/mission/mission-1.txt
 mode guided
 arm throttle
-takeoff 10
+takeoff 50
 mode auto
 ```
 The above script will launch overt attacks intermittently during the mission. The effects of the attack and the recovery can be seen by zooming in to the map window. Videos showing PID-Piper recovery on real RVs are available [here](https://drive.google.com/drive/folders/1GG03mz_0IkC_D91Z9UN3HsluzHrwVNVU). 
