@@ -386,7 +386,7 @@ void AC_AttitudeControl::input_euler_angle_roll_pitch_yaw(float euler_roll_angle
 			_ahrs.get_gyro_latest().x, _ahrs.get_gyro_latest().y, _ahrs.get_gyro_latest().z,
 			AC_AttitudeControl::posX, AC_AttitudeControl::posY, AC_AttitudeControl::posZ,
 			AC_AttitudeControl::velX, _ahrs.get_error_rp(), _ahrs.get_error_yaw(),
-			AC_AttitudeControl::posX, AC_AttitudeControl::posY,
+			AC_AttitudeControl::errorX, AC_AttitudeControl::errorY,
 			AC_AttitudeControl::velErrorX, AC_AttitudeControl::velErrorY,
 			_ahrs.roll_sensor, _ahrs.pitch_sensor);
 
@@ -396,18 +396,18 @@ void AC_AttitudeControl::input_euler_angle_roll_pitch_yaw(float euler_roll_angle
     float euler_yaw_angle = radians(euler_yaw_angle_cd*0.01f);
 
     /*
-	 * PID-Piper
-	 */
+     * PID-Piper
+     */
 
-    _piper.y_PID.x = euler_roll_angle;
-	_piper.y_PID.y = euler_pitch_angle;
-	_piper.y_PID.z = euler_yaw_angle;
+_piper.y_PID.x = euler_roll_angle;
+_piper.y_PID.y = euler_pitch_angle;
+_piper.y_PID.z = euler_yaw_angle;
 
-	piper_angles = _piper.recoveryMonitor();
+piper_angles = _piper.recoveryMonitor();
 
-	euler_roll_angle = piper_angles.x;
-	euler_pitch_angle = piper_angles.y;
-	euler_yaw_angle = piper_angles.z;
+euler_roll_angle = piper_angles.x;
+euler_pitch_angle = piper_angles.y;
+euler_yaw_angle = piper_angles.z;
 
     // calculate the attitude target euler angles
     _attitude_target_quat.to_euler(_attitude_target_euler_angle.x, _attitude_target_euler_angle.y, _attitude_target_euler_angle.z);
