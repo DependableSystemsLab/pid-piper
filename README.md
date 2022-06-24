@@ -65,4 +65,4 @@ Please contain pdash@ece.ubc.ca if you need the raw .tlog files.
 ## Paper
 If you find the repo useful, please cite the following paper: 
 
-*Pritam Dash, Guanpeng Li, Zitao Chen, Mehdi Karimibiuki, and Karthik Pattabiraman, "PID-Piper: Recoverying Robotic Vehicles from Physical Attacks", 51st IEEE/IFIP International Conference on Dependable Systems and Networks (DSN), 2021.*
+*Pritam Dash, Guanpeng Li, Zitao Chen, Mehdi Karimibiuki, and Karthik Pattabiraman, "PID-Piper: Recovering Robotic Vehicles from Physical Attacks", 51st IEEE/IFIP International Conference on Dependable Systems and Networks (DSN), 2021.*
